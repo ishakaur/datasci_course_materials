@@ -1,6 +1,5 @@
 import oauth2 as oauth
 import urllib2 as urllib
-import ujson as json
 
 # See assignment1.html instructions or README for how to get these credentials
 
@@ -52,16 +51,11 @@ def twitterreq(url, method, parameters):
   return response
 
 def fetchsamples():
-  # url = "https://stream.twitter.com/1/statuses/sample.json"
-  url = "https://api.twitter.com/1.1/search/tweets.json?q=$SPY"
+  url = "https://stream.twitter.com/1/statuses/sample.json"
   parameters = []
   response = twitterreq(url, "GET", parameters)
   for line in response:
-    twresponse = json.loads(line.strip())
-    print twresponse
-    for status in twresponse[u'statuses']:
-      print "{}: {}".format(status["user"]["screen_name"].encode('utf-8'), status["text"].encode('utf-8'))
-      raw_input("")
+    print line.strip()
 
 if __name__ == '__main__':
   fetchsamples()
