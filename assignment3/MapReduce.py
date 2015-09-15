@@ -1,8 +1,9 @@
 import json
+import collections
 
 class MapReduce:
     def __init__(self):
-        self.intermediate = {}
+        self.intermediate = collections.OrderedDict()
         self.result = []
 
     def emit_intermediate(self, key, value):
