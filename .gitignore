@@ -1,3 +1,5 @@
 .idea*
 *output.txt
 *submission.txt
+**/output/*
+*.pyc
