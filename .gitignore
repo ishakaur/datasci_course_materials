@@ -3,3 +3,6 @@
 *submission.txt
 **/output/*
 *.pyc
+*.RData
+*.Rhistory
+
